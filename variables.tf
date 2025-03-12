@@ -82,3 +82,48 @@ variable "ssl_certificate_arn" {
   description = "ssl certificate arn"
   type = string
 }
+
+# sns topic variables
+variable "email_operator" {
+  default = "trainiumtech@gmail.com"
+  description = "a valid email address"
+  type = string
+}
+
+# asg variables
+variable "launch_template_name" {
+  default = "trainium-launch-template"
+  description = "name of launch template"
+  type = string
+}
+
+variable "ec2_image_id" {
+  default = "ami-0f21e15a9d029b405"
+  description = "id of the ami"
+  type = string
+}
+
+variable "ec2_instance_type" {
+  default = "t2.micro"
+  description = "the ec2 instance type"
+  type = string
+}
+
+variable "ec2_key_pair_name" {
+  default = "eckeypair"
+  description = "name of the ec2 key pair"
+  type = string
+}
+
+# route-53 hosted zone variables
+variable "domain_name" {
+  default = "trainiumcloud.com"
+  description = "domain name"
+  type = string
+}
+
+variable "record_name" {
+  default = "www"
+  description = "sub domain name"
+  type = string
+}
