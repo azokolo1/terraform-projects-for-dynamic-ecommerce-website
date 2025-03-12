@@ -50,3 +50,35 @@ variable "ssh_location" {
   description = "ip address that casn ssh into ec2 instance"
   type = string
 }
+
+# rds snapshot arn vartiables
+variable "database_snapshot_identifier" {
+  default = "arn:aws:rds:eu-west-2:904233097435:snapshot:trainium-rds-db-snapshot-rentzone-february-2025"
+  description = "database snapshot"
+  type = string
+}
+
+variable "database_instance_class" {
+  default = "db.t3.micro"
+  description = "database instance class"
+  type = string
+}
+
+variable "database_instance_identifier" {
+  default = "trainium-rds-db"
+  description = "database instance identifier"
+  type = string
+}
+
+variable "multi_az_deployment" {
+  default = false
+  description = "create a standby db instance"
+  type = bool
+}
+
+# ssl certificate variables
+variable "ssl_certificate_arn" {
+  default = "arn:aws:acm:eu-west-2:904233097435:certificate/ca4fd7b8-6473-43ed-a1bd-98d8f9fd745a"
+  description = "ssl certificate arn"
+  type = string
+}

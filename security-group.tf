@@ -4,7 +4,7 @@ resource "aws_security_group" "alb_security_group" {
   description = "enable http/https access on port 80/443"
   vpc_id = aws_vpc.vpc.id
 
-  ingress = {
+  ingress {
     description = "http access"
     from_port = 80
     to_port = 80
@@ -118,7 +118,7 @@ resource "aws_security_group" "database_security_group" {
     from_port = 0
     to_port = 0
     protocol = -1
-    cidr_blocks = "0.0.0.0/0"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   tags = {
